@@ -38,7 +38,26 @@
             background-color: #000000;
             color: #ffffff;
         }
+
+        input[type=reset]{
+          background-color: #000000;
+          border: none;
+          color: #FF8C00;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: none;
+          padding: 14px 40px;
+          font-size: 20pt;
+        }
+
+        input[type=reset]:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: #000000;
+            background-color: #FF8C00;
+            transition: background 1s ease-in-out;
+        }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -57,23 +76,62 @@
     </ul>
 </nav>
 <main>
-    <form action="processfeedback.php" method="post" autocomplete="on">
+    <form action="../post.php" method="post" autocomplete="on">
         <p>First name:
-        <input type="text" name="Fname" size="50"/>
+        <input type="text" name="fname" id="fname" size="50" required/>
         <br></br>
         Last name:
-        <input type="text" name="Lname" size="50"/>
+        <input type="text" name="lname" id="lname" size="50" required/>
+        <br></br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <br></br>
+        <label for="contact">Choose a preferred method of contact:</label>
+
+        <select name="contact" id="contact">
+            <option value="phoneopt">Phone message</option>
+            <option value="emailopt">Email</option>
+        </select>
         <br></br>
         Email address:
-        <input type="text" name="email" size="50"/>
+        <input type="text" name="email" id="email" size="50" required/>
         <br></br>
         Phone number:
-        <input type="text" name="phone number" size="10"/>
+        <input type="text" name="phone number" id="pnumber" size="14"/>
+        <br></br>
+        <input type="checkbox" id="boardgame" name="boardgame" value="game">
+        <label for="boardgame"> Board game specific comment.</label><br>
+        <input type="checkbox" id="review" name="review" value="review">
+        <label for="review"> Review specific comment.</label><br>
+        <input type="checkbox" id="tutorial" name="tutorial" value="tutorial">
+        <label for="tutorial"> Tutorial specific comment.</label>
         <br></br>
         Comment:
-        <textarea name="comment" rows="8" cols="40"></textarea>
+        <textarea name="comment" rows="8" cols="40" id="comments" required></textarea>
         <br></br>
+        Enter your four-digit passcode, then click ok.
+        <input id="id1" type="number" min="1000" max="9999">
+        <button onclick="myFunction()">OK</button>
+        <br></br>
+        <input type="reset"/>
         <input type="submit" value="Send Comment"/></p>
+
+        <p id="passcode"></p>
+
+        <script>
+            function myFunction() {
+                var inpObj = document.getElementById("id1");
+                if (inpObj.checkValidity() == false) {
+                    document.getElementById("passcode").innerHTML = inpObj.validationMessage;
+                } else {
+                    document.getElementById("passcode").innerHTML = "Passcode Valid";
+                }
+            }
+        </script>   
     </form>
 </main>
 <footer>
