@@ -60,23 +60,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<header>
-    <a href="index.html"><img src="Images/logo1.jpg" alt="Bored Games Logo" width="194" height="194"></img></a>
-    <h1>Give Us a Shout</h1>
-</header>
-<nav>
-    <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="boardgames.html">Board Games</a></li>
-        <li><a href="gameofmonth.html">Game of the Month</a></li>
-        <li><a href="tutorial.html">Tutorials</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-    </ul>
-</nav>
-<main>
+    <div class="header">
+        <a href="index.html"><img src="Images/logo1.jpg" alt="Bored Games Logo" width="194" height="194"></img></a>
+        <h1>Give Us a Shout</h1>
+    </div>
+<div class="topnav">
+        <a href="index.html">Home Page</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="boardgames.html">Board Games</a>
+        <a href="gameofmonth.html">Game of the Month</a>
+        <a href="tutorial.html">Tutorials</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contactus.html">Contact Us</a>
+</div>
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
     <form action="../post.php" method="post" autocomplete="on">
+
         <p>First name:
         <input type="text" name="fname" id="fname" size="50" required/>
         <br></br>
@@ -111,7 +112,7 @@
         <label for="tutorial"> Tutorial specific comment.</label>
         <br></br>
         Comment:
-        <textarea name="comment" rows="8" cols="40" id="comments" required></textarea>
+        <textarea name="comments" rows="8" cols="40" id="comments" required></textarea>
         <br></br>
         Enter your four-digit passcode, then click ok.
         <input id="id1" type="number" min="1000" max="9999">
@@ -133,19 +134,22 @@
             }
         </script>   
     </form>
-</main>
-<footer>
-    <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="boardgames.html">Board Games</a></li>
-        <li><a href="gameofmonth.html">Game of the Month</a></li>
-        <li><a href="tutorial.html">Tutorials</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-    </ul>
-    <p> © 2014 - 2020 <br></br>
-    Bored Games</p>
-</footer>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="index.html">Home Page</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="boardgames.html">Board Games</a>
+    <a href="gameofmonth.html">Game of the Month</a>
+    <a href="tutorial.html">Tutorials</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contactus.html">Contact Us</a>
+    <br></br>
+     © 2014 - 2020 
+     <br></br>
+    Bored Games
+</div>
 </body>
 </html>
